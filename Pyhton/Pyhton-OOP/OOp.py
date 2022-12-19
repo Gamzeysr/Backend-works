@@ -48,7 +48,24 @@
 
 # meyve1 = Meyveler()
 # meyve2 = Meyveler()
-#! meryve1 ve meyve2 olarak object olusturmuş oluyoruz bu objectlerede intance diyoruz
+# * meryve1 ve meyve2 olarak object olusturmuş oluyoruz bu objectlerede intance diyoruz
 
 # print(meyve1.name)
 # print(meyve2.kg)
+
+#!   ✨class attributes vs instance attributes:
+class Person:
+    name = "victor"
+    age = 33
+
+
+person1 = Person()
+person2 = Person()
+# * 👆 iki tane yine intance oluşturdum Person classında
+
+# * Bir instancelarımıza ekleyeceğimiz özellik diğer instancelarımızı etkilemiyor 👇
+person1.location = "turkey"
+print(person1.location)
+print(person2.location)
+# * Yani;Burada person1 instance ıma ✨location = turkey'i ✨eklerken person2  intsance ım bundan etkilenmedi.
+# * İnstancelarımda class'dan gelen ne varsa hepsi instancelarımda oluyorken, attribute'lerim sadece hangi instanceıma attribute u ekliyorsam sadece o attribute da oluyor.❤
