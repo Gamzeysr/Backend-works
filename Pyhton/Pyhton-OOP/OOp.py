@@ -17,35 +17,38 @@
 # 🏄‍♂️👆
 
 #! ✨defining class✨👇
-# Pyhtonda class tanımlarken class keywordunu kullanıyoruz
+# *Pyhtonda class tanımlarken class keywordunu kullanıyoruz
 # class Person:
 #     name = "victor"
 #     age = 33
 
-#  👆 Şuan burada ben pyhton da class oluşturmuş oldum.Ben bu kalıptan artık yeni objectler olusutabilirm.
+# * 👆 Şuan burada ben pyhton da class oluşturmuş oldum.Ben bu kalıptan artık yeni objectler olusutabilirm.
+
 # person1 = Person()
 # person2 = Person()
 
-# 🎉👆Burada iki adet nesne yani object olusturdum.
+# * 🎉👆Burada iki adet nesne yani object olusturdum.
+# * Bu objeclere ✨intance✨ deniyor
 
 
-# 🎉Bu olusturmuş oldugum objectlere ✨intance ✨ de deniyor.
-# 🎉Bu nesnlere kalıptan oluşturdugum için kalıbın özelliğini tasır.
+# * 🎉Bu olusturmuş oldugum objectlere ✨intance ✨ de deniyor.
+# * 🎉Bu nesnlere kalıptan oluşturdugum için kalıbın özelliğini tasır.
 # print(person1.name)
 # print(person2.age)
 
 
-# 🎉 kalıba bir özellik eklemek istersem ekleyebilirim👇
+# * 🎉 kalıba bir özellik eklemek istersem ekleyebilirim👇
 # Person.job = "developer"
 # print(person1.job)
 
-class Meyveler:
-    name = "watermelon"
-    kg = 5
+# class Meyveler:
+#     name = "watermelon"
+#     kg = 5
 
 
-meyve1 = Meyveler()
-meyve2 = Meyveler()
+# meyve1 = Meyveler()
+# meyve2 = Meyveler()
+#! meryve1 ve meyve2 olarak object olusturmuş oluyoruz bu objectlerede intance diyoruz
 
-print(meyve1.name)
-print(meyve2.kg)
+# print(meyve1.name)
+# print(meyve2.kg)
