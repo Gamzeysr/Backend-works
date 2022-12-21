@@ -36,7 +36,6 @@
 # print(person1.name)
 # print(person2.age)
 
-
 # * 🎉 kalıba bir özellik eklemek istersem ekleyebilirim👇
 # Person.job = "developer"
 # print(person1.job)
@@ -48,11 +47,10 @@
 
 # meyve1 = Meyveler()
 # meyve2 = Meyveler()
-# * meryve1 ve meyve2 olarak object olusturmuş oluyoruz bu objectlerede intance diyoruz
+# * meryve1 ve meyve2 olarak object olusturmuş oluyoruz bu objectlerede intance diyoruz.
 
 # print(meyve1.name)
 # print(meyve2.kg)
-
 #!   ✨class attributes vs instance attributes:
 # class Person:
 #     name = "victor"
@@ -324,10 +322,85 @@
 
 # ✨#?Abstraction
 
-liste = [2, 3, 1, 4]
-liste.sort()
-print(liste)
+# liste = [2, 3, 1, 4]
+# liste.sort()
+# print(liste)
 # * Burada output: [1,2,3,4,5] burada sort methodu listenin içindekileri sıralıyor onu biliyoruz aslında arkada ne fonksiyonlarla calısdgını detaylı bilmyioruz işte Abstraction  bize yapıların yeteri kadar ne işe yaracagını bilmemiz yeterli diyor.
 # * Yani kullanıcıya greksiz detaylardan ve bilmesne ihtiyaç olmayan yapıdan uzaklaştırarak yormamak- soyutlama
 
 #! Bir örnek olarak, bir telefonu düşünebilirsiniz. Telefon, çeşitli özelliklere ve davranışlara sahiptir(örneğin mesaj gönderme, arama yapma, alarm kurma gibi) ancak kullanıcıların bu özellikleri ve davranışları kullanabilmeleri için telefonun nasıl çalıştığını bilmeleri gerekmez. Telefonun kullanımı için gerekli olan özellikler ve davranışlar, telefonun arayüzünde gösterilir ve kullanıcılar bu arayüzü kullanarak telefonu kullanabilirler. Bu durumda, telefonun içinde yer alan özellikler ve davranışlar encapsulation ile gizlenmiştir ve sadece kullanıcıların ihtiyaç duydukları özellikler ve davranışlar abstraction ile ortaya çıkarılmıştır.
+
+# ✨#?Inheritance
+# * Miras kalıtım.
+# * Bir takım özellikleri, methodları, attributelari o classdan üretilmiş başka classlara aktarma.Miras bırakmaya ✨Parent✨ classı diyoruz.
+# * Bu özellikleri Parenttan alan class ada ✨child✨ diyoruz.Bunlara örnek parent-child-kalıtım imagesi na bak
+
+
+# class Person:
+#     company = "clarusway"
+
+#     def __init__(self,name,age)
+#       self.name = name
+#       self.age = age
+
+#     def __str__(self):
+#         return f"{self.name}"
+
+#     def get_details(self):
+#         print(self.name,self.age)
+
+# class Employe(Person):
+#     pass
+
+#  emp1 = Employe("barry",20)
+#  emp1.get_details()
+
+# *👆  Person classından Employe classı ürettik ve intance olusturduk.
+# * Burada Person classının içindekileri de miras alarak bir employee classı meydana geldi.
+#
+# print(emp1.company) dediğimizde 👉 output:clarusway olucak cünkü kalıtım olrak Person clasını da almış oldugundan
+# ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+
+# ✨#? Polymorphism
+# * Overriding
+# parenttan aldıgımız bir methodu yeni işlevsellik ekleyerek tekrardan tanımlamaya overriding deniliyor.
+
+
+# class Person:
+#     company = "clarusway"
+
+#     def __init__(self, name, age):
+#       self.name = name
+#       self.age = age
+
+#     def __str__(self):
+#         return f"{self.name}"
+
+#     def get_details(self):
+#         print(self.name, self.age)
+
+
+# class Employe(Person): 👉Burada person classından employe classını olusturdum.
+
+
+#     def __init__(self,name,age,path):
+#      self.name = name
+#      self.age = age
+#      self.path = path
+# * 👆 Burada Overriding yapmış olduk.Yani parenttan aldıgımız methodu yeni işlevsellik kazandırarak ekledik.
+# *     Bu overriding işlemini  kısaca ✨super() ✨keywordu ile yapabilirz.👇
+#!def __init__(self, name, age, path):
+#!super().__init__(name,age)
+#! self.path= path
+#      def get_details(self):
+#         print(self.name, self.age, self.path)
+# * 👆Burasınıda kısaca super() keywordu ile yapabilirim 👇
+#!   def get_details(self):
+#!    super().get_details()
+#!   print(self.path)
+
+
+#  emp1 = Employe("barry",20,"FS")
+#  emp1.get_details()
+# ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# * 🎀Employe classına ben overriding de yapabilirim ya da yeni bir class da oluşturabilirim 🎀
