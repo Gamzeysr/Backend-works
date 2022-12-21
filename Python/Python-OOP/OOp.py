@@ -105,7 +105,7 @@
 # person1.name="victor"
 # person1.age=33
 # person1.get_details()
-# 👆 burada person1 instance ını cagırdıgımız için içinde ki methodu gelirdi.
+# 👆 burada person1 instance ını cagırdıgımız için içinde ki methodu getirdi.
 
 
 # person2.name="henry"
@@ -115,7 +115,7 @@
 
 # output:victor - 33
 # Ve burada ki methodlar parametre almak zorunda yoksa hata verir dikkat et
-# method ların içindeki self yazısını kasdediyorum
+# method ların içindeki self yazısını kasdediyorum.
 # ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 
 # class Person:
@@ -142,7 +142,7 @@
 # ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 # * eger değişmeyen sabit bir method istersek ✨@staticmethod✨ yazıcaz
 # * ve bu @staticmethod u yazdgımızda artık self yazmamıza gerek kalmıyor
-# * Yani staticmethodlar self  parametresi almazlar
+# * Yani staticmethodlar self  parametresi almazlar.
 # class Person:
 #     company = "clarusway"
 
@@ -230,8 +230,8 @@
 # ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 
 #! __str__ methodu
-# *  str methodlarla ben instance larımın çıktısını görüntüsünü ayarlayabiliyorum
-# * Yani ben instance larımın içine ne yazdıysam onu __str__ methoduyla görebiliyorum
+# *  str methodlarla ben instance larımın çıktısını görüntüsünü ayarlayabiliyorum.
+# * Yani ben instance larımın içine ne yazdıysam onu __str__ methoduyla görebiliyorum.
 # class Person:
 #            company = "clarusway"
 
@@ -239,8 +239,12 @@
 #                    self.name = name
 #                    self.age = age
 #                   self.gender=gender
-# def __str__(self):
-#     return f"{self.name} - {self.age}"
+
+
+#            def __str__(self):
+#                return f"{self.name} - {self.age}"
+
+
 #            def get_details(self):
 #                    print(f"{self.name} - {self.age}")
 
@@ -260,11 +264,12 @@
 
 
 # ✨# ?Encapsulation
-# * kullanıcı tarafından classların,verilerin ve methodların ne kadarının görüntülenebileceğini, ne kadarınn değiştirebileceğini belirlediğimiz yapı.
+# * kullanıcı tarafından classların,verilerin ve methodların ne kadarının görüntülenebileceğini, ne kadarının değiştirebileceğini belirlediğimiz yapı.
 
-# *public - private - protected
-# *Bu getter settre methodlarını bu methotlara göre ayarlayıp kullanabiliyoruz.Mesela;
-# * person1.name ="victor" u yukarıda gayet atadık ama name'i biz protected olarak ayarlasaydık direk değeri elimizi kolumuzu sallayarak busekilde atayamazdık.
+# *  public - private - protected
+# *  Herkesin ulaşabildiği methodlara public,private methodlarına dışarıdan ulaşılamıyor,protected methodlarına ise; kontrollü bir sekilde ulaşılabilirz.
+# *  Bu getter setter methodlarını bu methotlara göre ayarlayıp kullanabiliyoruz.Mesela;
+# *  person1.name ="victor" u yukarıda gayet atadık ama name'i biz protected olarak ayarlasaydık direk değeri elimizi kolumuzu sallayarak bu sekilde atayamazdık.
 
 # class Person:
 #             company = "clarusway"
@@ -290,4 +295,39 @@
 
 # person1._id = 4000
 # print(person1._id)
-# 👆Burada _id yi değiştirdik değiştirebiliriz ama sıkıntı cıkarabilir
+# ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+
+# * ✨Bu tek alt cızgı nın anlamı değiştirip okuyabilirisn ama ileride sıkıntı cıkarabilir bu durum yinede sen bilirsin diyor.✨
+# * ✨iki alt çizgi olursa biz dışarıdan direkt buna ulaşamayız.👇🏻
+# class Person:
+#                 company = "clarusway"
+
+#                 def __init__(self, name, age"):
+#                         self.name = name
+#                         self.age = age
+#                         self.__number = 200
+
+#                 def __str__(self):
+#                     return f"{self.name} - {self.age}"
+
+
+#                 def get_details(self):
+#                     print(f"{self.name} - {self.age}")
+
+
+# person1=Person("victor",33)
+# print(person.__number)
+# *  output: hata alrırız . çünkü iki alt çizgi olunca ulaşamıyoruz.
+# print(person1._Person__number)👈 ama dediğimde ulaşabiliriz.
+# ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+
+
+# ✨#?Abstraction
+
+liste = [2, 3, 1, 4]
+liste.sort()
+print(liste)
+# * Burada output: [1,2,3,4,5] burada sort methodu listenin içindekileri sıralıyor onu biliyoruz aslında arkada ne fonksiyonlarla calısdgını detaylı bilmyioruz işte Abstraction  bize yapıların yeteri kadar ne işe yaracagını bilmemiz yeterli diyor.
+# * Yani kullanıcıya greksiz detaylardan ve bilmesne ihtiyaç olmayan yapıdan uzaklaştırarak yormamak- soyutlama
+
+#! Bir örnek olarak, bir telefonu düşünebilirsiniz. Telefon, çeşitli özelliklere ve davranışlara sahiptir(örneğin mesaj gönderme, arama yapma, alarm kurma gibi) ancak kullanıcıların bu özellikleri ve davranışları kullanabilmeleri için telefonun nasıl çalıştığını bilmeleri gerekmez. Telefonun kullanımı için gerekli olan özellikler ve davranışlar, telefonun arayüzünde gösterilir ve kullanıcılar bu arayüzü kullanarak telefonu kullanabilirler. Bu durumda, telefonun içinde yer alan özellikler ve davranışlar encapsulation ile gizlenmiştir ve sadece kullanıcıların ihtiyaç duydukları özellikler ve davranışlar abstraction ile ortaya çıkarılmıştır.
