@@ -404,3 +404,75 @@
 #  emp1.get_details()
 # ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 # * 🎀Employe classına ben overriding de yapabilirim ya da yeni bir class da oluşturabilirim 🎀
+# Yukarıdaki overriding'i super() keywordu ile clear bi sekilde yazalım şimdi👇
+# class Person:
+#     company = "clarusway"
+
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f" {self.name}"
+
+#     def get_details(self):
+#         print(self.name, self.age)
+
+# class Employe(Person):
+#     def __init__(self,name,age,path):
+#      super().__init__(name,age)
+#      self.path = path
+
+#      def get_details(self):
+#       super().get_details()
+#       print(self.path)
+
+
+# emp1=Employe("barry",20,"FS")
+# emp1.get_details()
+
+
+# ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+
+# * Overloading:
+# * aynı methodan birden fazla olmasına dayanıyor.
+# *Overloading:aynı methodu farklı parametrelerle çalıştırmaya dayanıyor.
+
+
+# class Person:
+#     company = "clarusway"
+
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f" {self.name}"
+
+#     def get_details(self):
+#         print(self.name, self.age)
+
+
+# class Employe(Person):
+#     def __init__(self, name, age, path):
+#         super().__init__(name, age)
+#         self.path = path
+
+#         def get_details(self):
+#             super().get_details()
+#             print(self.path)
+
+#         def get_details(self, salary):
+#             super().get_details()
+#             print(self.path)
+
+#         def get_details(self, salary, duration):
+#             super().get_details()
+#             print(self.path)
+
+
+# emp1 = Employe("barry", 20, "FS")
+# emp1.get_details()
+
+# 👆 Tabi kullanım bu python da yok..Java gibi dillerde var ama pythoo da yok.Python en son tanımladıgımız methodu görğyor diğerlerini görmüyor bu da pythonun özelliği.
+# pythonda multipledispatch package var bunu yüklerrsek o zama overloading özelliği gelebiliyor.
