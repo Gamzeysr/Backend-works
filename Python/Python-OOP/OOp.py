@@ -476,3 +476,110 @@
 
 # 👆 Tabi kullanım bu python da yok..Java gibi dillerde var ama pythoo da yok.Python en son tanımladıgımız methodu görğyor diğerlerini görmüyor bu da pythonun özelliği.
 # pythonda multipledispatch package var bunu yüklerrsek o zama overloading özelliği gelebiliyor.
+
+
+# ✨#?multiple inheritance
+# * Birden fazla classımızı inheritance edebiliriz.
+
+
+# class Person:
+#     company = "clarusway"
+
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f" {self.name}"
+
+#     def get_details(self):
+#         print(self.name, self.age)
+
+
+# class Lang:
+#     def __init__(self, langs):
+#         self.langs = langs
+
+#     def display_langs(self):
+#         print(self.langs)
+
+
+# *👇🏻 Burada ki Employe classında birden fazla class inheritance etmiş olduk Django da da bu sekilde.
+# class Employe(Person, Lang):
+#     def __init__(self, name, age, path, langs):
+#         super().__init__(name, age)
+#         Lang.__init__(self, langs)
+#         self.path = path
+#         # self.langs = langs
+
+#         def get_details(self):
+#             super().get_details()
+#             print(self.path)
+
+
+# emp1 = Employe("barry", 20, "FS", "JavaScript")
+# emp1.get_details()
+# print(emp1.company)
+# emp1.display_langs()
+
+# ? other topics
+
+# print(Employe.mro()) #*mro : method resolution order
+# *👆 Bu method Employe classı bize arka tarafda hangi inharitancelardan üretildiğini gösteren methoddur.
+
+
+# print(help(Employe)) 👉 #*help de bize employe classının bize bütün bilgisini döküyor.
+
+
+# print(emp1.__dict__)👇🏻
+# * output:{'name':'barry' 'age':20 'langs':'Javascript' 'path':'FS'}
+
+# print(isinstance(emp1, Employe))👇🏻
+# * Bu methptta benim Employe classım emp1 demi diye döndürüyor.emp1 de ise true değilse false dönüyor.
+
+# print(issubclass(Lang,Person))👇🏻
+# * Person classı Lang classını kapsıyor mu kapsıyorsa true kapsamıyorsa False,Bunların ikisde bagımsız class oldgundan false
+# * Burada output:False
+
+# print(issubclass(Employe,Person))👇🏻
+# * Employe classı Person classını kapsıyor mu kapsıyorsA true kapsamıyorsa False
+# * output:True
+
+
+#! getattr (instanece, attribute) : returns attribute value of instance
+#! setattr (instanece, attribute, new value) : update attribute  of instance
+#! hasattr (instanece, attribute):return boolean
+#! delattr (instanece, attribute): delete attribute of instance
+
+# print(getattr(emp1,"name"))👉bu bana iki tane parametre kullanmamı sağlar.ilki✨ instance✨ ı alır,ikincisi attribute alır. sonucu👇🏻Bu sekilde instancelarımızın attrıbutelerını cekebliyoruz.
+# *output:barry
+# ya da 👇🏻👇🏻
+# x = getattr(emp1, "name")
+# print(x)
+
+
+# print(setattr(emp1, "name", "qadir"))
+# print(getattr(emp1,"name"))
+# output:qadir
+
+# print(hasattr(emp1, "name"))👉Bizim instance ımızın böğle bir parametresi var mı yokmu onu döndürüyor.
+# * output:True
+
+
+# print(delattr(emp1,"age"))
+# print(emp1.__dict__)
+# * output:{'name':'barry', 'langs':'Javascript', 'path': 'FS'}
+
+
+# ? inner class
+
+# from django.db import models
+
+
+# class Makale(models.Model):
+#     name = models.CharFiels(max_length=50)
+#     author = models.CharField(max_length=50)
+
+#     class Meta:
+#         ordering = ["name"]
+#         verbose_name = "makaleler"
