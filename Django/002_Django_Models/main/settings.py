@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+#!👆 Güvenlikle ilgili şeyler 
 
 ROOT_URLCONF = "main.urls"
 
