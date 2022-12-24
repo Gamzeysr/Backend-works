@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "fschort","dschort"
+    "fschort", "dschort"
 
 ]
-#! django da default olarak olusturulan dosyalar 
+#! django da default olarak olusturulan dosyalar
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -56,7 +56,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-# arada gercekleşen işlemler için yazılan katmanlar
+#! Bunu dış kapı olarak düşün👆
+#! arada gercekleşen işlemler için yazılan katmanlar
 ROOT_URLCONF = "main.urls"
 # urls.py yi kasdedıyor
 
@@ -75,7 +76,7 @@ TEMPLATES = [
         },
     },
 ]
-# kolay bi sekilde frontendi burada halledebiliyoruz. 
+# kolay bi sekilde frontendi burada halledebiliyoruz.
 
 WSGI_APPLICATION = "main.wsgi.application"
 
@@ -89,7 +90,7 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-#! djangoyu kurdugumuzda default olarak veritabanı geliyor 
+#! djangoyu kurdugumuzda default olarak veritabanı geliyor
 
 
 # Password validation
@@ -99,9 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 
