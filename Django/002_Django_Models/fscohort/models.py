@@ -7,7 +7,8 @@ from django.db import models
 class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    number = models.IntegerField()
+    number = models.IntegerField(default=1111)
+    # buna number girilmezse 1111 olsun dedik👆
     about = models.TextField(bank=True, null=True)
     register = models.DateTimeField(auto_now_add=True)
     # 👆 instanceımın ilk olusturdgum tarihi yazıyor.
@@ -15,4 +16,6 @@ class Student(models.Model):
     # 👆studentdan herhangi birsey degistirdgim zaman en sonki degistirdiğim tarihi alıyor.
     is_active = models.BooleanField()
 
+
 # ? Burada ✨Student✨ ismi yakın zamanda olusturacak oldugum tablom ismine takabul ediyor.
+# ? CharField da max uzunluk girilmesi zorunlu
