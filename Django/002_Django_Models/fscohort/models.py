@@ -16,12 +16,14 @@ class Student(models.Model):
     # 👆studentdan herhangi birsey degistirdgim zaman en sonki degistirdiğim tarihi alıyor.
     is_active = models.BooleanField()
 
-
 # ? Burada ✨Student✨ ismi yakın zamanda olusturacak oldugum tablom ismine takabul ediyor.
 # ? CharField da max uzunluk girilmesi zorunlu
 
     def __str__(self):
         return f"{self.number} + {self.first_name}"
-
 # ? str methodu kısa benim objelerimin görüntsünü ayarladıgım methoddur.
 # ? Bu method database de degisşiklik yapmıyor sadece bu databasedeki isimlerin bana göre görüntüsnü ayarlamış oluyorum
+
+    class Meta:
+        ordering = ["number"]
+        verbose_name_plural = "Student_list"
