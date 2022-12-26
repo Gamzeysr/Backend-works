@@ -8,3 +8,5 @@ class Student(models.Model):
     number = models.PositiveSmallIntegerField(blank=True)
     
 
+def __str__(self):
+    return f'{self.number} - {self.first_name} - {self.last_name}'
