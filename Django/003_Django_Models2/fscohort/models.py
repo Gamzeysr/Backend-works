@@ -10,3 +10,4 @@ class Student(models.Model):
 
 def __str__(self):
     return f'{self.number} - {self.first_name} - {self.last_name}'
+    #! 👆Bu method bana tablo baslıklarında number first_name last_name i göster diyor.
