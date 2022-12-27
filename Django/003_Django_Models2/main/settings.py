@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
 #    myapps
 'fscohort',
-'relatios',
+'relations',
 
 ]
 
