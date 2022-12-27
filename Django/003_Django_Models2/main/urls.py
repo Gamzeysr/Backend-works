@@ -26,5 +26,6 @@ urlpatterns = [
 
 
 
-urlpatterns =+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 # bu sayfadan aldım 👆  https://docs.djangoproject.com/en/4.1/howto/static-files/
