@@ -6,6 +6,13 @@ class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=30)
     number = models.PositiveSmallIntegerField(blank=True,null=True)
+    about = models.TextField(blank=True)
+    email = models.EmailField(blank=True)
+    is_active = models.BooleanField(default=True)
+    avatar = models.ImageField(blank=True, null=True)
+    register_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+
 
     #! eğer ben bir integera blank=True dersem bu demek oluyor ki number yerini browserda bos gecebilirsin tablo yaparken demek oluyor, eger ben bu blank=Trueyu integer için dersem database dede bos gecmem gerekiyor aynı sekilde o yüzden ✨null=True✨ diyoruz.Yani database imide bos gecebilir oldugunu integer de söylemem gerekiyor
     
