@@ -17,6 +17,10 @@ class Student(models.Model):
     #! eğer ben bir integera blank=True dersem bu demek oluyor ki number yerini browserda bos gecebilirsin tablo yaparken demek oluyor, eger ben bu blank=Trueyu integer için dersem database dede bos gecmem gerekiyor aynı sekilde o yüzden ✨null=True✨ diyoruz.Yani database imide bos gecebilir oldugunu integer de söylemem gerekiyor
     
 
+    #? resimle ilgili bir işlem yaoacaksam pip install Pillow komnutunu kullanmalıyım 
+
+
+
     def __str__(self):
        return f'{self.number} - {self.first_name} - {self.last_name}'
     #! 👆Bu method bana tablo baslıklarında number first_name last_name i göster diyor.
