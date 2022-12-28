@@ -2,7 +2,7 @@
 from django.shortcuts import render,HttpResponse, get_object_or_404
 
 
-from .models import Student,Path
+from .models import Student
 from .serializers import StudentSerializer
 #*✨✨✨ 3.adım olarak StudentSerializer ımı import ettim.Şimdi 4. adım olarak da enspointlarımı olusturucam urls.pymda 
 
@@ -47,7 +47,7 @@ def student_api_get_update_delete(request, pk):
         if serializer.is_valid():
             serializer.save()
             data = {
-                "message": f"Student {student.last_name} updated successfully"
+            "message": f"Student {student.last_name} updated successfully"
             }
             return Response(data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
