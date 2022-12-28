@@ -36,7 +36,7 @@ def student_api(request):
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'PUT', 'DELETE', 'PATCH']) #? 👈özel bi öğrenci cekiyor sonra onu update ediyor sonra delete ya da patch ediyor 
+@api_view(['GET', 'PUT', 'DELETE', 'PATCH']) #? 👈özel bi öğrenci cekiyor sonra onu update ediyor sonra delete ya da patch ediyor.
 def student_api_get_update_delete(request, pk):
     student = get_object_or_404(Student, pk=pk)
     if request.method == 'GET':
