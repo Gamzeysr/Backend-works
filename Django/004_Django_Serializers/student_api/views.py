@@ -1,8 +1,12 @@
 
 from django.shortcuts import render,HttpResponse, get_object_or_404
-from .models import Students
 
+
+from .models import Student,Path
 from .serializers import StudentSerializer
+#*✨✨✨ 3.adım olarak StudentSerializer ımı import ettim.Şimdi 4. adım olarak da enspointlarımı olusturucam urls.pymda 
+
+
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -14,14 +18,16 @@ from rest_framework import status
 def home(request):
     return HttpResponse('<h1>API Page</h1>' )
 
-
-@api_view(['GET', 'POST'])
+#! get ve post isteklerine cevap veren bir fonk 👇
+#!👇 Bu viewlarımı ben Serializers i import ettiğim için kullanabilirim.
+@api_view(['GET', 'POST']) #?👈bu öğrenci listeleme ve öğrenci create etmeye yarıyor 
 def student_api(request):
     if request.method == 'GET':
         students = Student.objects.all()
-        serializer = StudentSerializer(students, many=True)
+        #! 👆bu komut tablodaki butun öğrencileri çekiyor.yani butun instanceları çekip studends degiskenine atanmış.
         return Response(serializer.data)
     elif request.method == 'POST':
+        #!👆 frontendden bana post methodu ile veri gelmiş 
         serializer = StudentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -30,7 +36,7 @@ def student_api(request):
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'PUT', 'DELETE', 'PATCH'])
+@api_view(['GET', 'PUT', 'DELETE', 'PATCH']) #? 👈özel bi öğrenci cekiyor sonra onu update ediyor sonra delete ya da patch ediyor 
 def student_api_get_update_delete(request, pk):
     student = get_object_or_404(Student, pk=pk)
     if request.method == 'GET':
