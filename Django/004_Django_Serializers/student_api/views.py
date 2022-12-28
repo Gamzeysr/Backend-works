@@ -25,6 +25,7 @@ def student_api(request):
     if request.method == 'GET':
         students = Student.objects.all()
         #! 👆bu komut tablodaki butun öğrencileri çekiyor.yani butun instanceları çekip studends degiskenine atanmış.
+        serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         #!👆 frontendden bana post methodu ile veri gelmiş 
