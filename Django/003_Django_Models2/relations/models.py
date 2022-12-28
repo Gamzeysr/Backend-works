@@ -11,7 +11,7 @@ class Profile(models.Model):
 
     #! CASCADE'de mesela benim User'im silindiğinde bu User'a ait profile'in silinmesini istiyorsam CASCADE kullanıcam.
 
-  def __str__(self):
+    def __str__(self):
         return self.user.username
 
 
@@ -34,7 +34,7 @@ class Address(models.Model):
     phone = models.CharField(max_length=20)
     User = models.ForeignKey(User, on_delete=models.CASCADE)
 
-def __str__(self):
+    def __str__(self):
         return f'{self.name} {self.user.username}'
 
 
