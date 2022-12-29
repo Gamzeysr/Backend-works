@@ -4,7 +4,7 @@ from django.shortcuts import render,HttpResponse, get_object_or_404
 
 from .models import Student
 from .serializers import StudentSerializer
-#*✨✨✨ 3.adım olarak StudentSerializer ımı import ettim.Şimdi 4. adım olarak da enspointlarımı olusturucam urls.pymda 
+#*✨✨✨ 3.adım olarak StudentSerializer ımı import ettim.Şimdi 4. adım olarak da endpointlarımı olusturucam urls.pymda 
 
 
 from rest_framework.decorators import api_view
