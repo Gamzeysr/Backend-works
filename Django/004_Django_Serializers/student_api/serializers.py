@@ -33,7 +33,7 @@ class StudentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Student
-        fields = ["id","first_name","last_name","number","age"]
+        fields = ["id","first_name","last_name","number","age"] #!👉bunlar benim modelimden gelen fieldlar
 
 
 
