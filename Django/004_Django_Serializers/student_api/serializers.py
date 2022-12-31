@@ -32,11 +32,11 @@ from .models import Student
 #? https://www.django-rest-framework.org/api-guide/serializers/#modelserializer 
 # kullanılan seriliazers methodu👇
 
-class StudentSerializer(serializers.ModelSerializer):
+# class StudentSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Student
-        fields = ["id","first_name","last_name","number","age"] #!👉bunlar benim modelimden gelen fieldlar.
+#     class Meta:
+#         model = Student
+        # fields = ["id","first_name","last_name","number","age"] #!👉bunlar benim modelimden gelen fieldlar.
         # exclude = ["number"]
         #! datalarımdan number harıcındekileri getirecek exclude harıc demek.Bunu calıstırırken fieldsı kapıyoruz
 
@@ -48,3 +48,17 @@ class StudentSerializer(serializers.ModelSerializer):
 #? eger verimin hepsinin dönmesni istemeseydim  fields = ["id","first_name","last_name","number","age"] şeklinde belirterek response olarak döndürecektim.
 
 
+#*👇 database den cektiğim student datasına bu seriliazares a ekstra data ekleyip frontend de dönebiliyoerum asagıdada onu yaptık.
+class StudentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+ 
+        born_year= serializers.SerializerMethodField()
+
+        model = Student
+        fields = ["id","first_name","last_name","number","age"]
+
+        def get_born_year(self,obj):
+            import datatime
+            current_time = datatime.datatime.now()
+            return current_time.year - obj.age
