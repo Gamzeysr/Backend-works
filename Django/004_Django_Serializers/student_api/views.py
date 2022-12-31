@@ -27,8 +27,9 @@ def student_api(request):
         #! 👆bu komut tablodaki butun öğrencileri çekiyor.yani butun instanceları çekip studends degiskenine atanmış.
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
+        #!👆 ve buradada cektiğim öğrencilieri bana response olarak döndü ama json formatında döndü.Benim bu Students ları databaseden ORM ile cektikten sonra json formatına dönebilmem için arada format değişikliği yapmam lazım bunuda serializer ie yapıyorum.
     elif request.method == 'POST':
-        #!👆 frontendden bana post methodu ile veri gelmiş 
+        #!👆 frontendden bana post methodu ile veri gelmiş. 
         serializer = StudentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
