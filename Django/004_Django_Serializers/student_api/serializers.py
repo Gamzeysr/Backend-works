@@ -56,9 +56,9 @@ class StudentSerializer(serializers.ModelSerializer):
         born_year= serializers.SerializerMethodField()
 
         model = Student
-        fields = ["id","first_name","last_name","number","age"]
+        fields = ["id","first_name","last_name","number","age","born_year"]
 
         def get_born_year(self,obj):
-            import datatime
-            current_time = datatime.datatime.now()
+            import datetime
+            current_time = datetime.datetime.now()
             return current_time.year - obj.age
