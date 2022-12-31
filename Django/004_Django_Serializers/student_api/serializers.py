@@ -50,15 +50,37 @@ from .models import Student
 
 #*👇 database den cektiğim student datasına bu seriliazares a ekstra data ekleyip frontend de dönebiliyoerum asagıdada onu yaptık.
 class StudentSerializer(serializers.ModelSerializer):
+   
+   born_year= serializers.SerializerMethodField()
+   path = serializers.StringRelatedField()
+#    👆path seklinde görmek için bunu bu sekilde tanımladık
 
-    class Meta:
+
+
+
+class Meta:
  
-        born_year= serializers.SerializerMethodField()
+
 
         model = Student
-        fields = ["id","first_name","last_name","number","age","born_year"]
+        fields = ["id","first_name","last_name","number","age","born_year","path"]
+        # Buraya ben hangi methodları verirsem onları bana döndürüyor.👆
 
         def get_born_year(self,obj):
             import datetime
             current_time = datetime.datetime.now()
             return current_time.year - obj.age
+
+class PathSerializer(serializers.ModelSerializer):
+    
+    students = StudentSerializer(many=True)
+    students = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='detail'
+    )
+    
+    class Meta:
+        model = Path
+        # fields = "__all__"
+        fields = ["id", "path_name", "students"]
