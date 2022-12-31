@@ -19,7 +19,7 @@ def home(request):
     return HttpResponse('<h1>API Page</h1>' )
 
 #! get ve post isteklerine cevap veren bir fonk 👇
-#!👇 Bu viewlarımı ben Serializers i import ettiğim için kullanabilirim.
+#!👇 Bu viewlarımı ben Serializers i import ettiğim için kullanabilirim.Artık urls.py ye gidip çağırıyorum
 @api_view(['GET', 'POST']) #?👈bu öğrenci listeleme ve öğrenci create etmeye yarıyor 
 def student_api(request):
     if request.method == 'GET':
