@@ -8,8 +8,8 @@ class Path(models.Model):
         return f"{self.path_name}"
 
 
-class Student(models.Model):  # lower_case modelname_set
-    path = models.ForeignKey(Path, related_name='students', on_delete=models.CASCADE)
+class Student(models.Model): #!related_name olmadaydı 👉 lower_case modelname_set yazarak ulasabiliridk
+    path = models.ForeignKeyPath, related_name='students', on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     number = models.IntegerField(blank=True, null=True)
