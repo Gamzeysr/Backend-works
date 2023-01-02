@@ -8,9 +8,10 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-@api_view()  # default GET
+@api_view() #!👉 bu function aslında,bu function bazı özellikleri yapmamızı sağlıyor en buyuk özelliği ise; POSTMANın bize basit halini sunması ve response ile json işlemlerini yapmasını sağlıyor arka tarafda #! ✨default GET✨
 def home(requst):
     return Response({'home': 'This is home page...'})
+    #! bu response artık bize json formatında döndüğü için 👆burada artık key value seklinde degerler yazdım.
 
 
 # http methods ----------->
