@@ -48,6 +48,11 @@ def student_create(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     #!👆 valid değilse  de buraya düsecek bu dönecek 
 
+# Informational responses (100 – 199)-->bilgilendirme
+# Successful responses (200 – 299)--> succes mesajları 200ile baslar.
+# Redirection messages (300 – 399)--> 
+# Client error responses (400 – 499)--> yanlış yada eksik data girilmişse yada yanlış url e gitmişse yanlış pathe istek atıldıysa bu hatayı alırız.
+# Server error responses (500 – 599) --> bizim backend e yaptıgımız bır hata varsa bunlarda 500 ile baslar 
 
 @api_view(['GET'])
 def student_detail(request, pk):
