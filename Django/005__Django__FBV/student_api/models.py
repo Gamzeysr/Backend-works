@@ -9,8 +9,7 @@ class Path(models.Model):
 
 
 class Student(models.Model):  # lower_case modelname_set
-    path = models.ForeignKey(
-        Path, related_name='students', on_delete=models.CASCADE)
+    path = models.ForeignKey(Path, related_name='students', on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     number = models.IntegerField(blank=True, null=True)
