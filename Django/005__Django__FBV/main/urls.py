@@ -20,5 +20,6 @@ from .views import real_home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', real_home),
+    #👆 artık real homedönecek
     path("api/", include("student_api.urls")),
 ]
