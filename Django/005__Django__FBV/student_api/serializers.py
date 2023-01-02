@@ -24,6 +24,7 @@ class StudentSerializer(serializers.ModelSerializer):
     
     born_year = serializers.SerializerMethodField()  # read_only
     path = serializers.StringRelatedField() # read_only
+     #*👆student modelindeki path bu 
     path_id = serializers.IntegerField()
     
     class Meta:
