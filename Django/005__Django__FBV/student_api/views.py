@@ -24,11 +24,15 @@ def home(requst):
 @api_view(['GET'])
 def students_list(request):
     students = Student.objects.all()
+    #!👆 Student tablomdaki butun ögrencilerimi aldıyorum 
     # print(students)
     serializer = StudentSerializer(students, many=True)
+    #!👆 bucekmiş oldugum Student datasını serializersın içine koyuyorum.bu serializer'ın bana yapmış oldugu student tablomu json formatına ceviriyor.
+    #* many=True dememın sebei student tablosunda birden fazla object dönecek olması.🧨🧨🧨many=true'yu belirtmezsem hata verir!!!
     # print(serializer)
     # print(serializer.data)
     return Response(serializer.data)
+    #!👆 en sonda bu serializer ın içine koydugum datayı response ile frontend de döndüm.
 
 
 @api_view(['POST'])
