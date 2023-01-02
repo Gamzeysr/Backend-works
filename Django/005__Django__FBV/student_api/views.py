@@ -14,12 +14,12 @@ def home(requst):
     #! bu response artık bize json formatında döndüğü için 👆burada artık key value seklinde degerler yazdım.
 
 
-# http methods ----------->
-# - GET (DB den veri çağırma, public)
-# - POST(DB de değişklik, create, private)
-# - PUT (DB DE KAYIT DEĞİŞKLİĞİ, private)
-# - delete (dB de kayıt silme)
-# - patch (kısmi update)
+#! http methods ----------->
+#? - GET (DB den veri çağırma, public)
+#? - POST(DB de değişklik, create, private)
+#? - PUT (DB DE KAYIT DEĞİŞKLİĞİ, private)
+#? - delete (dB de kayıt silme)
+#? - patch (kısmi update)
 
 @api_view(['GET'])
 def students_list(request):
@@ -37,14 +37,16 @@ def students_list(request):
 
 @api_view(['POST'])
 def student_create(request):
-    serializer = StudentSerializer(data=request.data)
-    if serializer.is_valid():
+    serializer = StudentSerializer(data=request.data) #!👉burada  datam frontenden gelecek.
+    if serializer.is_valid(): #!👉data valid ise databesıme kaydet, valid degilse error olarak dön.
         serializer.save()
         message = {
             "message": f'Student created succesfully....'
         }
+        #!👆 basarılı olursa bu sekilde mesage dönecek 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #!👆 valid değilse  de buraya düsecek bu dönecek 
 
 
 @api_view(['GET'])
