@@ -27,7 +27,7 @@ def students_list(request):
     #!👆 Student tablomdaki butun ögrencilerimi aldıyorum 
     # print(students)
     serializer = StudentSerializer(students, many=True)
-    #!👆 bucekmiş oldugum Student datasını serializersın içine koyuyorum.bu serializer'ın bana yapmış oldugu student tablomu json formatına ceviriyor.
+    #!👆 bu cekmiş oldugum Student datasını serializersın içine koyuyorum.bu serializer'ın bana yapmış oldugu student tablomu json formatına ceviriyor.
     #* many=True dememın sebei student tablosunda birden fazla object dönecek olması.🧨🧨🧨many=true'yu belirtmezsem hata verir!!!
     # print(serializer)
     # print(serializer.data)
