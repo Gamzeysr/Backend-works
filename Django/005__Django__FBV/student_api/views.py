@@ -54,12 +54,15 @@ def student_create(request):
 # Client error responses (400 – 499)--> yanlış yada eksik data girilmişse yada yanlış url e gitmişse yanlış pathe istek atıldıysa bu hatayı alırız.
 # Server error responses (500 – 599) --> bizim backend e yaptıgımız bır hata varsa bunlarda 500 ile baslar 
 
+
+#!👇 burada databaseden tek bir obje yi cekiyoruz.
 @api_view(['GET'])
 def student_detail(request, pk):
 
     student = get_object_or_404(Student, id=pk)
     # student = Student.objects.get(id=pk)
     serializer = StudentSerializer(student)
+    #!👆 many=True dememe gerek yok cükü tek bir object 
     return Response(serializer.data)
 
 
