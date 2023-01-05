@@ -78,6 +78,7 @@ def student_detail(request, pk):
 def student_update(request, pk):
     student = get_object_or_404(Student, id=pk)
     serializer = StudentSerializer(instance=student, data=request.data)
+    #! verilerim frontenden gelecegi için ✨data=request.data ✨ ı yazıyorum 
     if serializer.is_valid():
         serializer.save()
         message = {
