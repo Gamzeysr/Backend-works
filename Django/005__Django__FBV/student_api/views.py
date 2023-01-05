@@ -32,7 +32,7 @@ def students_list(request):
     # print(students)
     serializer = StudentSerializer(students, many=True)
     #!👆 bu cekmiş oldugum Student datasını serializersın içine koyuyorum.bu serializer'ın bana yapmış oldugu student tablomu json formatına ceviriyor.
-    #* many=True dememın sebei student tablosunda birden fazla object dönecek olması.🧨🧨🧨many=true'yu belirtmezsem hata verir!!!
+    #* many=True dememın sebebi student tablosunda birden fazla object dönecek olması.🧨🧨🧨many=true'yu belirtmezsem hata verir!!!
     # print(serializer)
     # print(serializer.data)
     return Response(serializer.data)
@@ -65,6 +65,7 @@ def student_create(request):
 def student_detail(request, pk):
 
     student = get_object_or_404(Student, id=pk)
+    #✨ get_object_or_404 ✨ 👆bu komut objeyi al alamazsan eger not found dön demek için kullanılıyor
     # student = Student.objects.get(id=pk)
     serializer = StudentSerializer(student)
     #!👆 many=True dememe gerek yok cükü tek bir object 
