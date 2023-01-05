@@ -1,8 +1,7 @@
 from django.urls import path
-from.views import home,assigment1
+from.views import home 
 
 urlpatterns =[
     path("",home),
-    path("assigment/",assigment1),
 ]
 #  4.adım 
