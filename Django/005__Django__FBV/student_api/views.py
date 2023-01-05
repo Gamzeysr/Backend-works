@@ -38,6 +38,7 @@ def students_list(request):
     return Response(serializer.data)
     #!👆 en sonda bu serializer ın içine koydugum datayı response ile frontend de döndüm.
 
+###############################################################################
 
 @api_view(['POST'])
 def student_create(request):
@@ -85,7 +86,7 @@ def student_update(request, pk):
         return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+#########################################################################################################
 @api_view(['DELETE'])
 def student_delete(request, pk):
     student = get_object_or_404(Student, id=pk)
@@ -96,7 +97,7 @@ def student_delete(request, pk):
     return Response(message)
 
 
-#############################################################
+##################################################################################################################3
 
 @api_view(['GET', 'POST'])
 def student_api(request):
@@ -112,7 +113,7 @@ def student_api(request):
                 "message": f"Student {serializer.validated_data.get('first_name')} saved successfully!"}
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+###########################################################################################################################33
 
 @api_view(['GET', 'PUT', 'DELETE', 'PATCH'])
 def student_api_get_update_delete(request, pk):
