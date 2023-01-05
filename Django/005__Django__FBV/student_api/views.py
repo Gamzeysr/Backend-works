@@ -71,6 +71,7 @@ def student_detail(request, pk):
     #!👆 many=True dememe gerek yok cükü tek bir object 
     return Response(serializer.data)
 
+###############################################################################################################
 
 @api_view(['PUT'])
 def student_update(request, pk):
