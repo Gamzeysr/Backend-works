@@ -34,3 +34,5 @@ class Student(models.Model):
        verbose_name = 'Öğrenci'
        verbose_name_plural = 'Öğrenciler'
     #  db_table = '' tablo ismini değiştirmek için kullanıyoruz.
+
+#? Bu sayfadan sonra admin.py sayfasına gidiyoruz 
