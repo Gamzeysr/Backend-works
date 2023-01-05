@@ -1,3 +1,7 @@
+#✨✨ Bu sayfa views2 nını aynısı ama bız tek tek öğrenmek adına viewsin içindekileri buy sayfada yarıca yapıyoruz✨
+
+
+
 from django.shortcuts import render, HttpResponse, get_object_or_404
 
 from .models import Student, Path

@@ -25,7 +25,7 @@ class StudentSerializer(serializers.ModelSerializer):
     born_year = serializers.SerializerMethodField()  # read_only
 
 
-    
+
     path = serializers.StringRelatedField() # read_only
      #*👆student modelindeki path bu 
     path_id = serializers.IntegerField()
@@ -38,6 +38,7 @@ class StudentSerializer(serializers.ModelSerializer):
         
     
     def get_born_year(self, obj):
+        # 👆bunun basında ki get default olarak biz koyuyoruz 
         import datetime
         current_time = datetime.datetime.now()
         return current_time.year - obj.age
