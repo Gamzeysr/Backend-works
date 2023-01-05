@@ -49,7 +49,8 @@ def student_create(request):
         }
         #!👆 basarılı olursa bu sekilde mesage dönecek 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        #! kullanıcıya 201 mesajı dönecek zorunlu degıl bu kurall yanı ✨ status=status.HTTP_201_CREATED ✨ bunu yazmak ama kullanılırsa güzel olur
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
     #!👆 valid değilse  de buraya düsecek bu dönecek 
 
 # Informational responses (100 – 199)-->bilgilendirme
