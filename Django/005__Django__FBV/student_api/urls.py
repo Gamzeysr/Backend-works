@@ -6,8 +6,8 @@ from .views import (
     student_detail,
     student_update,
     student_delete,
-    # student_api,
-    # student_api_get_update_delete
+    student_api,
+    student_api_get_update_delete
 )
 
 urlpatterns = [
@@ -17,6 +17,6 @@ urlpatterns = [
     path("student-detail/<int:pk>/", student_detail, name='detail'),
     path("student-update/<int:pk>/", student_update, name='update'),
     path("student-delete/<int:pk>/", student_delete, name='delete'),
-    # path('student', student_api),
-    # path('student/<int:pk>', student_api_get_update_delete)
+    path('student', student_api),
+    path('student/<int:pk>', student_api_get_update_delete)
 ]
