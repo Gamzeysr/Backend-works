@@ -98,8 +98,9 @@ def student_delete(request, pk):
     return Response(message)
 
 
-##################################################################################################################3
+##################################################################################################################
 
+#! ✨✨bu endpoıntler slashdan sonra beni bir yere gönderecek pk veya id gibi bir sey istemiyor o yuzden bunları ikisini birleşirebiliyoruz✨✨✨
 @api_view(['GET', 'POST'])
 def student_api(request):
     if request.method == 'GET':
@@ -116,6 +117,7 @@ def student_api(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 ###########################################################################################################################33
 
+#! ✨✨ Bu methodlardsa pk ye ihtiyac duyanların hepsi ✨✨
 @api_view(['GET', 'PUT', 'DELETE', 'PATCH'])
 def student_api_get_update_delete(request, pk):
     student = get_object_or_404(Student, pk=pk)
