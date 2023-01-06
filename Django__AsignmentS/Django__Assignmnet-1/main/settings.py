@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    #! aaplicationumu olusturduktan hemen sonra appimin ismini bunun içine giriyorum.👇
     # myApp
+
     "userprofile"
 ]
 
