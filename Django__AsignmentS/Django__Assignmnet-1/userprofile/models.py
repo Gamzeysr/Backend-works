@@ -14,4 +14,4 @@ class Profile(models.Model):
       return f'{self.username}'
 
     class Meta:
-        ordering = ("username")
+        ordering = ["username"]
