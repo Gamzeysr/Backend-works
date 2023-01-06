@@ -23,3 +23,4 @@ urlpatterns = [
 ]
 
 #! 2.adım
+#!3 olarak Buradan sınrada artık userprofile isminde ki appimde class larımı olusturucam 
